@@ -18,8 +18,8 @@ public class Program {
 
         Seller seller = sellerDao.findById(3);
 
-        System.out.println(obj);
-        System.out.println("--------------------");
+        System.out.println("teste do seller");
+        seller = sellerDao.findById(3);
         System.out.println(seller);
     }
 }
