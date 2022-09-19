@@ -7,12 +7,11 @@ import model.entity.Seller;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 public class Program {
 
     public static void main(String[] args) throws SQLException {
-        Department obj = new Department(1,"Books");
-
 
         SellerDao sellerDao = DaoFactory.createSellerDao();
 
@@ -21,5 +20,14 @@ public class Program {
         System.out.println("teste do seller");
         seller = sellerDao.findById(3);
         System.out.println(seller);
+
+        System.out.println("----------------");
+        System.out.println("teste do findByDepartment");
+        Department department = new Department(2,null);
+        List<Seller> list = sellerDao.findByDepartment(department);
+
+        for(Seller obj : list){
+            System.out.println(obj);
+        }
     }
 }
